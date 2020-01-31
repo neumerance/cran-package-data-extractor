@@ -30,6 +30,7 @@ end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'webmock'
 end
 
 group :development do
@@ -43,3 +44,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'httparty'
+gem 'treetop-dcf'
