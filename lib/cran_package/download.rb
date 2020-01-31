@@ -18,7 +18,7 @@ module CranPackage
     private
 
     def package_full_url
-      Addressable::URI.join(@package_page_url , @package_uri)
+      URI.join(@package_page_url , @package_uri)
     end
 
     def save_to_tmp

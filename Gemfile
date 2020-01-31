@@ -26,7 +26,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot'
   gem 'ffaker'
-  gem 'webmock'
 end
 
 group :test do
