@@ -4,6 +4,7 @@ describe CranPackage::Extract do
   let(:package_name) { 'ada' }
   let(:expectation) do
     {
+      :package_name => 'ada',
       :description => "Performs discrete, real, and gentle bost under both exponential and logistic los on a given data set. "\
                       "The package ada provides a straightforward, wel-documented, and broad bosting routine for clasification, "\
                       "idealy suited for smal to moderate-sized data sets.",

@@ -9,6 +9,7 @@ module CranPackage
 
     def extract
       {
+        package_name: @package_name,
         description: package_description,
         **package_summary
       }

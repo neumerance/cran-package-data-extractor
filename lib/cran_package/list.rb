@@ -1,6 +1,7 @@
 module CranPackage
   class List
     PACKAGE_LIST_URL = "https://cran.r-project.org/src/contrib/PACKAGES".freeze
+    BATCH_SIZE = 500.freeze
 
     class << self
       def list
@@ -9,7 +10,7 @@ module CranPackage
           if row.first == "Package"
             row.last.squish.strip
           end
-        end.flatten.compact.uniq
+        end.flatten.compact.uniq.each_slice(BATCH_SIZE).to_a
       end
 
       private
