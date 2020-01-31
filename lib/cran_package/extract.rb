@@ -47,7 +47,15 @@ module CranPackage
           value = tr.css('td')[1].try(:text)
 
           next unless label.present? && value.present?
-          summary[label.parameterize.underscore.to_sym] = Sanitize.sanitize(value.squish.squeeze)
+          label = label.parameterize.underscore.to_sym
+          summary[label] =  if [:author, :maintainer].include?(label)
+                              value.split(',').map { |s| s.split(' and ') }.
+                                flatten.map(&:presence).compact.map do |user|
+                                Sanitize.sanitize_user_data(user)
+                              end
+                            else
+                              Sanitize.sanitize(value.squish.squeeze)
+                            end
         end
       end
       summary

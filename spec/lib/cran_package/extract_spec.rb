@@ -10,8 +10,26 @@ describe CranPackage::Extract do
       :version => "2.0-5",
       :depends => "R (≥ 2.10), rpart",
       :published => "2016-05-13",
-      :author => "Mark Culp, Kjel Johnson, and George Michailidis",
-      :maintainer => "Mark Culp mvculp@mail.wvu.edu",
+      :author => [
+        {
+          :name => "Mark Culp",
+          :email => ""
+        },
+        {
+          :name => "Kjel Johnson",
+          :email => ""
+        },
+        {
+          :name => "George Michailidis",
+          :email => ""
+        }
+      ],
+      :maintainer => [
+        {
+          :name => 'Mark Culp',
+          :email => 'mvculp@mail.wvu.edu'
+        }
+      ],
       :license => "GPL-2 | GPL-3 [expanded from: GPL]",
       :needscompilation => "no",
       :cran_checks => "ada results"
