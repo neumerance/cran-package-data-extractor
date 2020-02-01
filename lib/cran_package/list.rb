@@ -20,7 +20,7 @@ module CranPackage
         if response.success?
           response.body
         else
-          raise 'Unable to retrieve package lists'
+          raise Exceptions::UnableToRetrievePackageList
         end
       end
     end
