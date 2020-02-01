@@ -23,7 +23,7 @@ module CranPackage
 
     def html
       doc = HTTParty.get(@package_page_url)
-      raise Exceptions::UnableToReachPackageRepositor unless doc.success?
+      raise Exceptions::UnableToReachPackageRepository unless doc.success?
       @html ||= Nokogiri::HTML(doc)
     end
 
