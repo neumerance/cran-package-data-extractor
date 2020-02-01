@@ -20,36 +20,39 @@ module CranPackage
     private
 
     def create_package
-      @package ||= Package.find_or_create_by(name: @package_name).update(
+      @package ||= Package.find_or_create_by(name: @summary[:package_name])
+      @package.update(
         name: @summary[:package_name],
         title: @summary[:title],
         description: @summary[:description]
       )
     end
 
-    def create_package_version(version, published)
+    def create_package_version(version, publication)
       @package_version ||= PackageVersion.find_or_create_by(
         package: @package,
         version: version
-      ).update(published: published)
+      )
+      @package_version.update(publication: publication)
     end
 
     def create_package_author
-      @package_author ||= PackageAuthor.find_or_create_by(
+      PackageAuthor.find_or_create_by(
         package_version: @package_version,
         contributor: @contributor
       )
     end
 
     def create_package_maintainer
-      @package_maintainer ||= PackageMaintainer.find_or_create_by(
+      PackageMaintainer.find_or_create_by(
         package_version: @package_version,
         contributor: @contributor
       )
     end
 
     def create_contributor(name, email)
-      @contributor ||= Contributor.find_or_create_by(name: name).update(email: email)
+      @contributor = Contributor.find_or_create_by(name: name)
+      @contributor.update(email: email)
     end
   end
 end

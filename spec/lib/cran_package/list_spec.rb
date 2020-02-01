@@ -9,7 +9,7 @@ describe CranPackage::List do
     mock_package_list
   end
 
-  let(:expectation) { ['A3', 'aaSEA'] }
+  let(:expectation) { [['A3', 'aaSEA']] }
 
   it 'returns lists of package names' do
     expect(subject).to eq expectation
