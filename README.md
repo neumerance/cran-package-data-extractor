@@ -48,7 +48,7 @@ Once you received the response below, watch your terminal to see the progress.
 
 Note: Right now ActiveJob uses ```:async`` as adapter
 
-If you want to see it in production level. Set the proper quiuing adapter.
+If you want to see it in production level. Set the proper queueing adapter.
 See [https://api.rubyonrails.org/v6.0.2.1/classes/ActiveJob/QueueAdapters.html](https://api.rubyonrails.org/v6.0.2.1/classes/ActiveJob/QueueAdapters.html) for more info.
 ```config.active_job.queue_adapter = :async```
 
