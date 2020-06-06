@@ -81,7 +81,6 @@ GEM
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
     pg (0.21.0)
-    polyglot (0.3.5)
     public_suffix (4.0.3)
     puma (3.12.2)
     rack (2.1.2)
@@ -147,10 +146,6 @@ GEM
       sprockets (>= 3.0.0)
     thor (1.0.1)
     thread_safe (0.3.6)
-    treetop (1.6.10)
-      polyglot (~> 0.3)
-    treetop-dcf (0.2.1)
-      treetop (>= 1.2.5)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
     webmock (3.8.0)
@@ -159,7 +154,7 @@ GEM
       hashdiff (>= 0.4.0, < 2.0.0)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.4)
+    websocket-extensions (0.1.5)
 
 PLATFORMS
   ruby
@@ -177,7 +172,6 @@ DEPENDENCIES
   shoulda-matchers
   spring
   spring-watcher-listen (~> 2.0.0)
-  treetop-dcf
   tzinfo-data
   webmock
 
